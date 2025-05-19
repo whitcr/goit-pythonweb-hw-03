@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Всі повідомлення</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <meta charset="UTF-8">
+
+</head>
+<body>
+  <h1>Список повідомлень</h1>
+  <ul>
+    {% for dt, msg in messages.items() %}
+      <li>
+        <b>{{ msg.username }}</b> ({{ dt }}):<br>
+        {{ msg.message }}
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="/">На головну</a>
+</body>
+</html>

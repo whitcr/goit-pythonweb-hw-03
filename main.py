@@ -92,10 +92,5 @@ class Handler(BaseHTTPRequestHandler):
             self.wfile.write(b'Internal Server Error')
 
 if __name__ == '__main__':
-    os.makedirs(os.path.join(BASE_DIR, 'storage'), exist_ok=True)
-    if not os.path.exists(os.path.join(BASE_DIR, 'storage', 'data.json')):
-        with open(os.path.join(BASE_DIR, 'storage', 'data.json'), 'w', encoding='utf-8') as f:
-            json.dump({}, f)
     httpd = HTTPServer(('localhost', PORT), Handler)
-    print(f"Serving on http://localhost:{PORT}")
     httpd.serve_forever()
